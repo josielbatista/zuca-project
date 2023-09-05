@@ -7,8 +7,8 @@ import * as yup from 'yup';
 
 import { api } from '@services/api';
 
-import LogoSvg from '@assets/logo.svg';
-import BackgroundImg from '@assets/background.png';
+import LogoSvg from '@assets/logonova.svg';
+import BackgroundImg from '@assets/background_login.png';
 
 import { AppError } from '@utils/AppError';
 
@@ -66,7 +66,7 @@ export function SignUp() {
 
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1}} showsVerticalScrollIndicator={false}>
-        <VStack flex={1} px={10} pb={16}>
+        <VStack flex={1} bg="green.150" px={10} pb={16}>
             <Image
             source={BackgroundImg}
             defaultSource={BackgroundImg}
@@ -76,17 +76,17 @@ export function SignUp() {
              />
 
 
-        <Center my={24}>
+        <Center flex={1} top={1} my={24}>
             <LogoSvg />
             
-            <Text color="gray.100" fontSize="sm">
-                Train your mind and body
+            <Text color="gray.100" fontSize="sm" mt={-7}>
+                Conecte-se e partilhe experiências
             </Text>
         </Center>
 
     <Center>
         <Heading color="gray.100" fontSize="xl" mb={6} fontFamily="heading">
-            Create your account
+            Crie sua conta
         </Heading>
 
         <Controller 
@@ -94,7 +94,7 @@ export function SignUp() {
             name="name"
             render={({ field: { onChange, value }}) => (
                 <Input 
-                 placeholder="Name"
+                 placeholder="Nome"
                  onChangeText={onChange}
                  value={value}
                  errorMessage = {errors.name?.message}
@@ -123,7 +123,7 @@ export function SignUp() {
             name="password"
             render={({ field: { onChange, value }}) => (
              <Input 
-                placeholder="Password" 
+                placeholder="Senha" 
                 secureTextEntry
                 onChangeText={onChange}
                 value={value}
@@ -136,7 +136,7 @@ export function SignUp() {
             name="password_confirm"
             render={({ field: { onChange, value }}) => (
              <Input 
-                placeholder="Confirm password" 
+                placeholder="Confirme sua senha" 
                 secureTextEntry
                 onChangeText={onChange}
                 value={value}
@@ -148,14 +148,14 @@ export function SignUp() {
         />
 
         <Button 
-        title="Create and access" 
+        title="Criar e acessar" 
         onPress={handleSubmit(handleSignUp)}
         isLoading={isLoading}
         />
     </Center>
 
     <Button 
-        title="Back to login" 
+        title="Voltar para o login" 
         variant="outline" 
         mt={12}
         onPress={handleGoBack}

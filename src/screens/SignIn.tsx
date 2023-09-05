@@ -7,8 +7,8 @@ import { AuthNavigatorRoutesProps } from '@routes/auth.routes';
 
 import { useAuth } from '@hooks/useAuth';
 
-import LogoSvg from '@assets/logo.svg';
-import BackgroundImg from '@assets/background.png';
+import LogoSvg from '@assets/logonova.svg';
+import BackgroundImg from '@assets/background_login.png';
 
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
@@ -53,7 +53,7 @@ export function SignIn(){
  
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1}} showsVerticalScrollIndicator={false}>
-        <VStack flex={1} px={10} pb={16}>
+        <VStack flex={1} px={10} pb={16} bg="green.150">
             <Image
             source={BackgroundImg}
             defaultSource={BackgroundImg}
@@ -63,17 +63,17 @@ export function SignIn(){
             />
 
 
-        <Center my={24}>
+        <Center flex={1} top={1} my={24} >
             <LogoSvg />
             
-            <Text color="gray.100" fontSize="sm">
-                Train your mind and body
+            <Text color="gray.100" fontSize="sm" mt={-12}>
+                 Conectando Brasileiros em Portugal
             </Text>
         </Center>
 
     <Center>
         <Heading color="gray.100" fontSize="xl" mb={6} fontFamily="heading">
-            Access your account
+            Acesse sua conta
         </Heading>
 
         <Controller 
@@ -96,7 +96,7 @@ export function SignIn(){
             name="password"
             render={({ field: { onChange, value }}) => (
                 <Input 
-                 placeholder="Password"
+                 placeholder="Senha"
                  secureTextEntry
                  onChangeText={onChange}
                  value={value}
@@ -106,7 +106,7 @@ export function SignIn(){
         />
 
         <Button 
-        title="Access" 
+        title="Acessar" 
         onPress={handleSubmit(handleSignIn)}
         isLoading={isLoading}
         />
@@ -114,11 +114,11 @@ export function SignIn(){
 
 <Center mt={24}>
     <Text color="gray.100" fontSize="sm" mb={3} fontFamily="body">
-        Don't have access yet?
+        Não tem acesso a sua conta?
     </Text>
 
         <Button 
-        title="Create Account" 
+        title="Criar conta" 
         variant="outline"
         onPress={handleNewAccount}
         />

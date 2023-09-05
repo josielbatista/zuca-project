@@ -15,7 +15,7 @@ const PHOTO_SIZE = 33;
 
 export function Profile() {
     const [photoIsLoading, setPhotoIsLoading] = useState(false);
-    const [userPhoto, setUserPhoto] = useState('https://github.com/itscrazyy.png')
+    const [userPhoto, setUserPhoto] = useState('https://github.com/josielbatista.png')
 
     const toast = useToast();
 
@@ -42,7 +42,7 @@ export function Profile() {
 
             if (photoInfo.exists && (photoInfo.size / 1024 / 1024) > 5) {
                return toast.show({
-                title: 'This image is very large. Choose one up to 5MB.',
+                title: 'Esta imagem é muito grande. Escolha uma com o máximo de 5MB.',
                 placement: 'top',
                 duration: 3000,
                 bgColor: 'red.500'
@@ -59,8 +59,8 @@ export function Profile() {
     } 
 
     return (
-        <VStack flex={1}>
-            <ScreenHeader title="Profile" />
+        <VStack flex={1} bg="green.150">
+            <ScreenHeader title="Perfil"/>
 
             <ScrollView contentContainerStyle={{ paddingBottom: 36 }}>
                 <Center mt={6} px={10}>
@@ -82,48 +82,53 @@ export function Profile() {
                 }
 
                 <TouchableOpacity onPress={handleUserPhotoSelect}>
-                    <Text color="green.500" fontWeight="bold" fontSize="md" mt={2} mb={8}>
-                        Change photo
+                    <Text color="white" fontWeight="bold" fontSize="md" mt={2} mb={8}>
+                        Alterar foto
                     </Text>
                 </TouchableOpacity>
 
                     <Input
-                        bg="gray.600"
+                        bg="green.50"
                         placeholder="Nome"
+                        placeholderTextColor="white"
                     />
                     
                     <Input
                         bg="gray.600"
                         placeholder="E-mail"
+                        placeholderTextColor="white"
                         isDisabled
                     />
                
 
                 
-                    <Heading color="gray.200" fontSize="md" mb={2} alignSelf="flex-start" mt={12} fontFamily="heading">
-                        Change password
+                    <Heading color="white" fontSize="md" mb={2} alignSelf="flex-start" mt={12} fontFamily="heading">
+                        Mudar senha
                     </Heading>
 
                     <Input
-                        bg="gray.600"
-                        placeholder="Old password"
+                        bg="green.50"
+                        placeholder="Senha antiga"
+                        placeholderTextColor="white"
                         secureTextEntry
                     />
 
                     <Input
-                        bg="gray.600"
-                        placeholder="New password"
+                        bg="green.50"
+                        placeholder="Nova senha"
+                        placeholderTextColor="white"
                         secureTextEntry
                     />
 
                     <Input
-                        bg="gray.600"
-                        placeholder="Confirm the new password"
+                        bg="green.50"
+                        placeholder="Confirme a nova senha"
+                        placeholderTextColor="white"
                         secureTextEntry
                     />
 
                     <Button
-                        title="Update"
+                        title="Atualizar"
                         mt={4}
                     />
 
